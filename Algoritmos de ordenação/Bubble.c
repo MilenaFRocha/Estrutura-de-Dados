@@ -10,12 +10,8 @@ int BubleSort(int * v, int tamanho){
     int ok =0;
     // ele passa no vetor n vezes 
     for(int j = 0; j < tamanho && ok ==0; j++){
-    // só passa no vetor uma vez
      ok = 1;
-
     // esse - j impede que ele compare com o ultimo elemento que já está ordenado
-    // o ok impede que o programe continue msm com o vetor ja ordenado
-    // ok soo vai ser 1 se ocorrer algum swap na linha
     for(i = 0; i < tamanho-1-j; i++){
         // passo 1
         if(v[i] < v[i+1]){
