@@ -1,19 +1,47 @@
 #include <stdio.h>  
+// eu sempre mando os menores que o pivo la pro começo e o amarleo serve para eu achar as posicoes de coemeco
+int swap(int *a, int *b){
+   int aux = *a;
+   *a = *b;
+   *b = aux;
+   return 0;
+}
+// a linha amarela fica na posicao de n - 1, onde n é a quantidade de elementos menores que o pivo
+int separa (int v[], int inicio, int fim) {
+   // semrpe escolhe o pivo como o ultimo elemento
+ int pivo = v[fim]; // pivô
+ int amarelo = inicio;
 
-int separa (int v[], int p, int r) {
- int c = v[r]; // pivô
- int t, j = p;
- for (int k = p; k < r; ++k)
- if (v[k] <= c) {
- t = v[j], v[j] = v[k], v[k] = t;
- ++j;
+ //faz a linha roxa percorrer o vetor até achar um elemento menor que o pivo
+ for(int roxo = inicio; roxo < fim; roxo++)
+
+ // quando acha um elemento menor que o pivo, troca o elemento da linha amarela com o elemento da linha roxa
+ if (v[roxo] <= pivo) {
+   //achei e mando ele la´para o começo
+   swap(&v[amarelo], &v[roxo]);
+ 
+ //agora posicao da amaerla vai estar ocupada entao mando ela para a proxima posicao
+ amarelo++;
  }
- t = v[j], v[j] = v[r], v[r] = t;
- return j;
+ //a amarela é a posicao do pivo e o pivo é o ultimo elemento, entao troco o pivo com a linha amarela
+   swap(&v[amarelo], &v[fim]);
+ return amarelo;
  }
+ int quicksort (int v[], int inicio, int fim) {
+   if (fim <= inicio) 
+   return 0;
+   int p = separa (v, inicio, fim);
+   quicksort (v, inicio, p-1);
+   quicksort (v, p+1, fim);
+   return 0;
+   }
  int main (void){
 
     int vet[]= {'b', 'd', 'a', 'b' ,'c'};
-    printf("%d,",separa(vet, 0, 4));
+    quicksort(vet, 0, 4);
+   for(int i = 0; i < 5; i++){
+      printf("%c,",vet[i]);
+   }
+    
     return 0;
  }
