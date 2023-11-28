@@ -16,8 +16,11 @@
   - Pior caso O(n.log(n))
 
 4.(Quick)[https://github.com/MilenaFRocha/Estrutura-de-Dados/blob/main/Algoritmos%20de%20ordena%C3%A7%C3%A3o/QuickSort.c]
-  -Esse método define um pivô onde todos elementos menores estarão a esquerda e todos os maiores a direita **o pivô sempre o ultimo elemento e percorre com a linha roxa e coloca na amarela (swap)**, ele faz isso **recursivamente** até ordenar
+  - Esse método define um pivô onde todos elementos menores estarão a esquerda e todos os maiores a direita **o pivô sempre o ultimo elemento e percorre com a linha roxa e coloca na amarela (swap)**, ele faz isso **recursivamente** até ordenar
   - Melhor caso O(n.log(n))
   - Pior caso O(n^2), quando o vetor estiver quase ordenado
 
 5.(Selection)[https://github.com/MilenaFRocha/Estrutura-de-Dados/blob/main/Algoritmos%20de%20ordena%C3%A7%C3%A3o/Selection.c]
+  - Esse método pega a posição do menor elemento e troca ele com o primeiro e assim sucetivamente , **funcao par aachar o index**
+  - Melhor caso O(n^2)
+  - Pior caso O(n^2)
