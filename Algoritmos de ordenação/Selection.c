@@ -6,53 +6,35 @@ void swap(int *a, int *b) {
     *b = temp;
 }
 
-void selectionSort(int arr[], int size) {
-    int i, j;
+void selection(int vet[],int tam){
+    int j =0;
 
-    for (i = 0; i < size - 1; i++) {
-        
+    for(j =0 ;j <tam;j++){
+        int index = j;
+        for(int i =j ; i <=tam - 1 ;i++){
 
-        // Encontre o índice do menor elemento na parte desordenada.
-        for (j = i + 1; j < size; j++) {
-            //compara com a posicao da frente e depois no for de cima ele n compara com o mesmo
-            if (arr[j] < arr[i]) {
-            
-                swap(&arr[i], &arr[j]);
-            }
+        if(vet[i]< vet[index] ){
+            index = i;
         }
-
-        // Troque o elemento mínimo com o elemento na posição atual.
+        }
+        if(vet[j]> vet[index]){
+            swap(&vet[j],&vet[index]);
+        }
     }
+
 }
-void selectionSort(int vet[], int tam){
- int i, min, aux;
- for(i=0; i<tam; i++){
- //Acha posicao do menor elemento a partir de i:
- min = smallerIndex(vet, tam, i);
- aux = vet[i];
- vet[i] = vet[min];
- vet[min] = aux;
- }
- }
- int smallerIndex(int vet[], int tam, int ini){
- int min = ini, j;
- for(j=ini+1; j<tam; j++){
- if(vet[min] > vet[j])
- min = j;
- }
- return min;
- }
+
 
 int main() {
     int arr[] = {64, 25, 12, 22, 11};
-    int size = sizeof(arr) / sizeof(arr[0]);
+    int size = 5;
 
     printf("Array desordenado: ");
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
 
-    selectionSort(arr, size);
+    selection(arr, size);
 
     printf("\nArray ordenado: ");
     for (int i = 0; i < size; i++) {
