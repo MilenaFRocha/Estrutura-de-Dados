@@ -11,7 +11,7 @@ void selection(int vet[],int tam){
 
     for(j =0 ;j <tam;j++){
         int index = j;
-        for(int i =j ; i <=tam - 1 ;i++){
+        for(int i =j ; i <tam  ;i++){
 
         if(vet[i]< vet[index] ){
             index = i;
