@@ -14,7 +14,7 @@ int BubleSort(int * v, int tamanho){
     // esse - j impede que ele compare com o ultimo elemento que já está ordenado
     for(i = 0; i < tamanho-1-j; i++){
         // passo 1
-        if(v[i] < v[i+1]){
+        if(v[i] > v[i+1]){
             ok = 0;
             swap(&v[i], &v[i+1]);
         }
@@ -28,7 +28,7 @@ int main(void ){
 
     BubleSort(vet, tamanho);
     for(int i = 0; i < tamanho; i++){
-        printf("%d", vet[i]);
+        printf("%d,", vet[i]);
     }
 
     return 0;
