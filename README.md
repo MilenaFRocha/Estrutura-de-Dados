@@ -1,4 +1,4 @@
-# Estrutura-de-Dados Repositório destinado à matéria de Estrutura de Dados
+# Estrutura-de-Dados Repositório destinado a matéria de Estrutura de Dados
 Repositório dedicado aos aprendizados na matéria de Estrutura de dados
 
 ## Glossário
